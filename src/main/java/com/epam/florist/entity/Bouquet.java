@@ -5,10 +5,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Bouquet implements Appraisable {
-    private final List<BouquetPart> bouquet = new ArrayList<BouquetPart>();
+    private final List<BouquetPart> bouquet;
+
+    public Bouquet(List<BouquetPart> bouquet) {
+        this.bouquet = bouquet;
+    }
 
     public List<BouquetPart> getBouquet() {
         return bouquet;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Bouquet)) return false;
+        Bouquet bouquet1 = (Bouquet) o;
+        return !(getBouquet() != null ? !getBouquet().equals(bouquet1.getBouquet()) : bouquet1.getBouquet() != null);
+    }
+
+    @Override
+    public int hashCode() {
+        return getBouquet() != null ? getBouquet().hashCode() : 0;
     }
 
     @Override

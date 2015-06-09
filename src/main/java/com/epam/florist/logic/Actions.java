@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class OperationsOnBouquet {
+public class Actions {
     public static List<Flower> sortFlowers(Bouquet bouquet) {
         List<Flower> flowers = new ArrayList<Flower>();
         for (BouquetPart bouquetPart : bouquet.getBouquet()) {
@@ -19,17 +19,6 @@ public class OperationsOnBouquet {
         }
         Collections.sort(flowers);
         return flowers;
-    }
-
-    public static List<Accessory> sortAccessories(Bouquet bouquet) {
-        List<Accessory> accessories = new ArrayList<Accessory>();
-        for (BouquetPart bouquetPart : bouquet.getBouquet()) {
-            if (bouquetPart instanceof Accessory) {
-                accessories.add((Accessory) bouquetPart);
-            }
-        }
-        Collections.sort(accessories);
-        return accessories;
     }
 
     public static List<Flower> searchFlowersByStalkLength(Bouquet bouquet, int stalkLength1, int stalkLength2) {
